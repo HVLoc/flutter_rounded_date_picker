@@ -195,22 +195,23 @@ class _FlutterRoundedDatePickerDialogState
       case DatePickerMode.day:
       default:
         return FlutterRoundedMonthPicker(
-            key: _pickerKey,
-            selectedDate: _selectedDate,
-            onChanged: _handleDayChanged,
-            firstDate: widget.firstDate,
-            lastDate: widget.lastDate,
-            era: widget.era,
-            locale: widget.locale,
-            selectableDayPredicate: widget.selectableDayPredicate,
-            fontFamily: widget.fontFamily,
-            style: widget.styleDatePicker,
-            borderRadius: widget.borderRadius,
-            customWeekDays: widget.customWeekDays,
-            builderDay: widget.builderDay,
-            listDateDisabled: widget.listDateDisabled,
-            onTapDay: widget.onTapDay,
-            onMonthChange: widget.onMonthChange);
+          key: _pickerKey,
+          selectedDate: _selectedDate,
+          onChanged: _handleDayChanged,
+          firstDate: widget.firstDate,
+          lastDate: widget.lastDate,
+          era: widget.era,
+          locale: widget.locale,
+          selectableDayPredicate: widget.selectableDayPredicate,
+          fontFamily: widget.fontFamily,
+          style: widget.styleDatePicker,
+          borderRadius: widget.borderRadius,
+          customWeekDays: widget.customWeekDays,
+          builderDay: widget.builderDay,
+          listDateDisabled: widget.listDateDisabled,
+          onTapDay: widget.onTapDay,
+          onMonthChange: widget.onMonthChange,
+        );
     }
   }
 
@@ -269,7 +270,10 @@ class _FlutterRoundedDatePickerDialogState
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Flexible(flex: 1, child: header),
+                  Flexible(
+                    flex: 1,
+                    child: header,
+                  ),
                   Flexible(
                     flex: 2, // have the picker take up 2/3 of the dialog width
                     child: Column(

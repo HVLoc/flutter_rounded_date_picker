@@ -118,9 +118,18 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
         ),
         child: Semantics(
           selected: mode == DatePickerMode.year,
-          child: Text(
-            "${calculateYearEra(era, selectedDate.year)}",
-            style: yearStyle,
+          child: Row(
+            children: [
+              Text(
+                localizations.selectYearSemanticsLabel + ": ",
+                style: yearStyle,
+              ),
+              Spacer(),
+              Text(
+                "${calculateYearEra(era, selectedDate.year)}",
+                style: dayStyle,
+              ),
+            ],
           ),
         ),
       ),
@@ -137,10 +146,19 @@ class FlutterRoundedDatePickerHeader extends StatelessWidget {
         ),
         child: Semantics(
           selected: mode == DatePickerMode.day,
-          child: Text(
-            localizations.formatMediumDate(selectedDate),
-            textScaleFactor: 1,
-            style: dayStyle,
+          child: Row(
+            children: [
+              Text(
+                localizations.datePickerHelpText.toLowerCase() + ": ",
+                style: yearStyle,
+              ),
+              Spacer(),
+              Text(
+                localizations.formatCompactDate(selectedDate),
+                textScaleFactor: 1,
+                style: dayStyle,
+              ),
+            ],
           ),
         ),
       ),

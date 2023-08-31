@@ -14,7 +14,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,8 +24,9 @@ class _MyAppState extends State<MyApp> {
         DefaultCupertinoLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      locale: Locale('en', 'US'),
+      locale: const Locale('vi', 'VN'),
       supportedLocales: [
+        const Locale('vi', 'VN'), // Vietnam
         const Locale('en', 'US'), // English
         const Locale('th', 'TH'), // Thai
       ],
